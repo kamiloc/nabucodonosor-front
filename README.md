@@ -1,4 +1,5 @@
 # nabucodonosor-front
+[![Netlify Status](https://api.netlify.com/api/v1/badges/02d623d8-efc2-49f7-954b-78d2b6d0f8ba/deploy-status)](https://app.netlify.com/sites/nabucodonosor/deploys)
 
 > Base implementation of Nabucodonosor app front made with nuxt.js
 
