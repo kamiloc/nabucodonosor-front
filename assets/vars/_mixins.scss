@@ -1,0 +1,14 @@
+@mixin h4-title-red() {
+  color: $old-rose;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 22px;
+  text-align: left;
+}
+
+@mixin flex-container-colums() {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  margin-right: auto;
+}
