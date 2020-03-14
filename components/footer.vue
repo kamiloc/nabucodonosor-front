@@ -27,13 +27,13 @@ export default {
   right: 0;
   text-align: center;
   &__line-1 {
-    font-size: 16;
-    line-height: 16px;
+    font-size: 1em;
+    line-height: 1.2em;
     margin: 4px 0;
   }
   &__line-2 {
-    font-size: 12px;
-    line-height: 12px;
+    font-size: 0.8em;
+    line-height: 0.8em;
   }
 }
 </style>

@@ -24,24 +24,24 @@ export default {
 
 <style lang="scss">
 .head {
-  border-bottom: 2px solid $sandy-brown;
-  background-color: $purple-light;
+  border-bottom: 1px solid $dark-slate-gray;
+  background-color: $color-background;
   padding: 30px 0;
   &__title,
   &__page {
+    color: $color-main;
     margin: 0 auto;
     text-align: center;
     width: 100%;
   }
 
   &__title {
-    color: #f0e1ba;
     font-size: 2em;
-    line-height: 1.5em;
+    line-height: 1em;
+    font-weight: 600;
   }
 
   &__page {
-    color: $sandy-brown;
     font-size: 1.2em;
     font-weight: 300;
     transition: 500ms;

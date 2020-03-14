@@ -8,12 +8,7 @@
           :key="navItem.label"
           class="nav-menu__item"
         >
-          <vs-button
-            square
-            color="rgb(175,137,154)"
-            :href="navItem.to"
-            gradient
-          >
+          <vs-button color="#3d405b" :href="navItem.to" gradient>
             {{ navItem.label }}
           </vs-button>
         </li>
@@ -51,56 +46,59 @@ export default {
 </script>
 
 <style lang="scss">
+body {
+  background-color: $color-background;
+}
+
 .head,
 .foot {
   width: 55%;
 }
 .container {
   align-items: center;
-  background-color: $wheat;
   display: flex;
   justify-content: center;
-  padding: 5% 50% 0 5%;
+  padding: 0 50% 0 5%;
   text-align: center;
 }
 
-.nav-menu {
+.nav-menu,
+.device-status {
   @include flex-container-colums;
-  min-height: 500px;
-  width: 50%;
+  min-height: 300px;
+  padding-top: 10%;
+  width: 100%;
   &__title {
     @include h4-title-red;
     flex: 0 0 100%;
-    margin-bottom: 16px;
+    margin-bottom: 1em;
+    text-align: center;
   }
+}
+
+.nav-menu {
   &__item {
-    margin: 10px 0;
+    margin: 16px 0;
     .vs-button {
       font-family: inherit;
-      font-size: 16px;
+      font-size: 0.8em;
       letter-spacing: -0.2px;
       font-weight: 800;
       text-transform: uppercase;
-      width: 60%;
+      margin: 0 auto;
+      width: 50%;
     }
   }
 }
 
 .device-status {
-  @include flex-container-colums;
-  min-height: 500px;
-  width: 50%;
-  &__title {
-    @include h4-title-red;
-    flex: 0 0 100%;
-    margin-bottom: 16px;
-  }
   .con-switch {
     font-family: inherit;
     font-weight: 600;
     margin-right: auto;
     text-transform: uppercase;
-    width: 15%;
+    margin: 0 auto;
+    width: 20%;
   }
 }
 
@@ -109,11 +107,11 @@ export default {
   background-position: left center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-left: 2px solid $purple-light;
+  border-left: 1px solid $purple-light;
   bottom: 0;
-  height: 100vh;
-  right: 0;
   position: absolute;
+  right: 0;
+  top: 0;
   width: 45vw;
   z-index: 2;
 }

@@ -18,7 +18,13 @@ module.exports = {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Nunito+Sans'
+        href:
+          'https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap'
+      },
+      {
+        rel: 'stylesheet',
+        href:
+          'https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css'
       }
     ]
   },

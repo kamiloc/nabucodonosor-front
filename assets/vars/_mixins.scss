@@ -1,8 +1,8 @@
 @mixin h4-title-red() {
-  color: $old-rose;
-  font-size: 22px;
+  color: $color-title;
+  font-size: 1.5em;
   font-weight: bold;
-  line-height: 22px;
+  line-height: 1em;
   text-align: left;
 }
 
