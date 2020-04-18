@@ -40,7 +40,6 @@
 <script>
 import Vuetable from 'vuetable-2'
 import VuetablePagination from 'vuetable-2/src/components/VuetablePagination'
-import axios from 'axios'
 import _ from 'lodash'
 
 import VuetableStyle from '~/store/vuetable-styles'
@@ -53,12 +52,6 @@ export default {
   components: {
     Vuetable,
     VuetablePagination
-  },
-  apollo: {
-    data: {
-      prefetch: true,
-      query: movements
-    }
   },
   data() {
     return {
@@ -74,17 +67,22 @@ export default {
     }
   },
   mounted() {
-    // this.fetchData()
+    this.fetchData()
   },
   methods: {
     fetchData() {
       const loading = this.$vs.loading()
 
-      axios
-        .get('https://jsonplaceholder.typicode.com/users')
-        .then((response) => {
-          this.data = response.data
-          if (loading) loading.close()
+      this.$apollo
+        .query({ query: movements })
+        .then(({ data }) => {
+          if (data && data.Movements) this.data = data.Movements
+          loading.close()
+        })
+        .catch((err) => {
+          // eslint-disable-next-line no-console
+          console.error(err)
+          loading.close()
         })
     },
     onPaginationData(paginationData) {
@@ -121,7 +119,7 @@ export default {
     },
     onActionClicked(action, data) {
       // eslint-disable-next-line no-console
-      console.log('slot actions: on-click', data.name)
+      console.log('slot actions: on-click', data)
     }
   }
 }

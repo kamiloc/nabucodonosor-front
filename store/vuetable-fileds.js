@@ -1,17 +1,22 @@
 export default [
   {
-    name: 'name',
-    title: 'Nombre',
-    sortField: 'name'
+    name: '_id',
+    title: 'ID',
+    sortField: '_id'
   },
   {
-    name: 'username',
-    title: 'Nombre de usuario',
-    sortField: 'username'
+    name: 'type',
+    title: 'Movimiento',
+    sortField: 'type'
   },
   {
-    name: 'email',
-    title: 'Correo',
-    sortField: 'email'
+    name: 'status',
+    title: 'Estado',
+    sortField: 'status'
+  },
+  {
+    name: 'created',
+    title: 'Creado',
+    sortField: 'created'
   }
 ]
