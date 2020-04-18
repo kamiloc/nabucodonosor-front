@@ -1,0 +1,9 @@
+query {
+  Movements {
+    _id
+    type
+    status
+    created
+    updated
+  }
+}

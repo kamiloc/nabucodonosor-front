@@ -1,0 +1,9 @@
+mutation {
+  switchCart {
+    _id
+    code
+    switchedOn
+    lastOn
+    lastOff
+  }
+}

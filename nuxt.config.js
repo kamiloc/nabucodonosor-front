@@ -1,3 +1,6 @@
+const APOLLO_URL =
+  'http://nabuco-main.southcentralus.azurecontainer.io:8000/graphql'
+
 module.exports = {
   mode: 'spa',
   /*
@@ -56,7 +59,8 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    '@nuxtjs/apollo'
   ],
   /*
    ** Axios module configuration
@@ -74,5 +78,19 @@ module.exports = {
   },
   styleResources: {
     scss: ['~assets/vars/*.scss']
+  },
+  // Give apollo module options
+  apollo: {
+    watchLoading: '~/plugins/apollo-watch-loading-handler.js',
+    errorHandler: '~/plugins/apollo-error-handler.js',
+    includeNodeModules: true,
+    clientConfigs: {
+      default: {
+        httpEndpoint: APOLLO_URL
+      }
+    },
+    test: {
+      httpEndpoint: APOLLO_URL
+    }
   }
 }

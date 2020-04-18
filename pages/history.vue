@@ -46,11 +46,19 @@ import _ from 'lodash'
 import VuetableStyle from '~/store/vuetable-styles'
 import VuetableFileds from '~/store/vuetable-fileds'
 
+import movements from '~/apollo/queries/movements'
+
 export default {
   layout: 'ap-default',
   components: {
     Vuetable,
     VuetablePagination
+  },
+  apollo: {
+    data: {
+      prefetch: true,
+      query: movements
+    }
   },
   data() {
     return {
@@ -66,7 +74,7 @@ export default {
     }
   },
   mounted() {
-    this.fetchData()
+    // this.fetchData()
   },
   methods: {
     fetchData() {
@@ -86,7 +94,7 @@ export default {
       this.$refs.vuetable.changePage(page)
     },
     dataManager(sortOrder, pagination) {
-      if (this.data.length < 1) return
+      if (!this.data || this.data.length < 1) return
 
       let local = this.data
 
